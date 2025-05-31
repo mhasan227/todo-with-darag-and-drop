@@ -1,0 +1,252 @@
+body {
+  background: #fff;
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.kanban-board {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.kanban-board h1 {
+  margin-bottom: 2rem;
+  color: #222;
+  font-family: 'Georgia', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.kanban-columns {
+  display: flex;
+  gap: 2rem;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.kanban-column {
+  background: #f7f9fb;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  padding: 1rem 0.5rem 0.5rem 0.5rem;
+  min-width: 270px;
+  max-width: 320px;
+  flex: 1 1 270px;
+  display: flex;
+  flex-direction: column;
+  min-height: 420px;
+  position: relative;
+}
+
+.kanban-column-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  padding: 0 0.5rem 0.5rem 0.5rem;
+  border-bottom: 2px solid #e5e7eb;
+}
+.kanban-column-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #222;
+}
+.kanban-column-menu {
+  font-size: 1.5rem;
+  color: #888;
+  cursor: pointer;
+  user-select: none;
+}
+
+.kanban-tasks {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  min-height: 40px;
+}
+
+.kanban-add-card {
+  margin-top: auto;
+  padding: 0.5rem 0.5rem 0.2rem 0.5rem;
+}
+.add-card-btn {
+  background: none;
+  border: none;
+  color: #222;
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 0.5em 0.2em;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background 0.15s;
+  text-align: left;
+  width: 100%;
+}
+.add-card-btn:hover {
+  background: #e5e7eb;
+}
+
+.styled-card {
+  background: #fff;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 10px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  padding: 0.7rem 0.8rem 0.6rem 0.8rem;
+  cursor: pointer;
+  outline: none;
+  transition: box-shadow 0.2s, border 0.2s;
+  margin-bottom: 0.1rem;
+  min-height: 60px;
+}
+.styled-card:focus, .styled-card:hover {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  border: 1.5px solid #b6b8c0;
+}
+.todo-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.2rem;
+}
+.todo-status-label {
+  color: #fff;
+  border-radius: 4px;
+  padding: 0.15em 0.6em;
+  font-size: 0.85em;
+  font-weight: 600;
+  margin-right: 0.4em;
+  display: inline-block;
+}
+.todo-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.3em;
+  font-size: 0.95em;
+  color: #6b7280;
+  margin-bottom: 0.2em;
+}
+.meta-icon {
+  font-size: 1em;
+  opacity: 0.7;
+}
+.meta-number {
+  font-size: 0.98em;
+  font-weight: 500;
+  opacity: 0.85;
+}
+.todo-card-desc {
+  color: #444;
+  font-size: 0.98em;
+  margin-bottom: 0.2em;
+  margin-top: 0.1em;
+}
+.todo-card-due {
+  color: #b85c00;
+  font-size: 0.95em;
+}
+
+.new-task-form-inline {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4em;
+  background: #f3f4f6;
+  border-radius: 8px;
+  padding: 0.5em 0.7em 0.7em 0.7em;
+  border: 1px solid #e5e7eb;
+}
+.new-task-form-inline input,
+.new-task-form-inline textarea {
+  padding: 0.4em;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 1em;
+}
+.add-card-actions {
+  display: flex;
+  gap: 0.5em;
+  margin-top: 0.2em;
+}
+.new-task-form-inline button {
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.4em 1em;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.new-task-form-inline button[type="button"] {
+  background: #e5e7eb;
+  color: #222;
+}
+.new-task-form-inline button[type="button"]:hover {
+  background: #d1d5db;
+}
+.new-task-form-inline button[type="submit"]:hover {
+  background: #1d4ed8;
+}
+
+.context-menu {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.13);
+  min-width: 180px;
+  padding: 0.5em 0;
+  z-index: 1000;
+}
+.context-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.context-menu li {
+  padding: 0.7em 1.2em;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.context-menu li:hover {
+  background: #f1f5f9;
+}
+.due-date-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  padding: 0.5em 1em;
+}
+.due-date-form input[type="datetime-local"] {
+  font-size: 1em;
+  padding: 0.3em;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+.due-date-form button {
+  background: #f59e42;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.4em 1em;
+  font-size: 1em;
+  cursor: pointer;
+  margin-top: 0.5em;
+}
+.due-date-form button:hover {
+  background: #e67c00;
+}
+
+@media (max-width: 900px) {
+  .kanban-columns {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .kanban-column {
+    max-width: 100%;
+    min-width: 0;
+  }
+}
